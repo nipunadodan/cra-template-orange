@@ -1,10 +1,10 @@
 //import { amsServer } from '../http-methods';
 //import { cacheVersionMap, CACHE_NAME } from './constants';
 
-export const CACHE_NAME = 'watched';
+export const CACHE_NAME = 'orange';
 export const cacheVersionMap = new Map();
 
-export const getCached = async (url, cacheMapKey) => {
+export const getCachedFetch = async (url, cacheMapKey) => {
     const cache = await caches.open(CACHE_NAME);
 
     // If cache has data return from cache
@@ -15,9 +15,7 @@ export const getCached = async (url, cacheMapKey) => {
     }
 
     // GET data from backend and save in cache
-    const headers = cacheVersionMap.get(cacheMapKey)
-        ? { headers: { ETag: cacheVersionMap.get(cacheMapKey) } }
-        : {};
+    const headers = cacheVersionMap.get(cacheMapKey) ? { headers: { ETag: cacheVersionMap.get(cacheMapKey) } } : {}; // Use if needed to send cache data through header
 
     const api_base = process.env.REACT_APP_API_BASE;
     let obj; let code;
@@ -31,7 +29,7 @@ export const getCached = async (url, cacheMapKey) => {
         await cache.put(url, new Response(JSON.stringify(obj)));
 
         // update the cache map
-        cacheVersionMap.set(cacheMapKey, data.headers['etag']);
+        cacheVersionMap.set(cacheMapKey, data.headers['etag']); // TODO: replace this with a valid data
     }
 
     return obj;
