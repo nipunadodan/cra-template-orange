@@ -8,7 +8,9 @@ Access demo at www.example.com
 - [Rationale](#rationale)
 - [Approach](#approach)
 - [Technologies Used](#technologies-used)
+- [Features](#features)
 - [Project Setup](#project-setup)
+- [Usage](#usage)
 - [Status](#status)
 - [Screenshots](#screenshots)
 - [Credits](#credits)
@@ -31,10 +33,16 @@ Access demo at www.example.com
 - `dotenv-cli`
 - [etc]
 
+## Features
+- [Feature 1]
+- [Feature 2]
+
 ## Project Setup
 - Download or clone the repository
 - Run `npm i`
 - Then `npm start`
+
+## Usage
 
 ## Status
 This project is `in development | actively maintained | on hold | abandoned`.

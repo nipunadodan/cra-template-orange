@@ -2,7 +2,16 @@
 
 This project was bootstrapped with [Create React App PWA](https://create-react-app.dev/docs/making-a-progressive-web-app/).
 
-## Enabling PWA
+## Setup
+1. Download or Clone the repository.
+2. Run, `npx create-react-app my-app --template file:path/to/your/template/cra-template-orange`
+
+### Edit the template or adding packages
+1. [Template files](#folder-structure) can be found in `template` folder to add/edit/remove.
+2. To add/edit/remove packages edit the `template.json` file.
+
+## Usage
+### Enabling PWA
 ```javascript
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
