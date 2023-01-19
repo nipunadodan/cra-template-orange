@@ -37,6 +37,50 @@ There are several readily available libraries, components and functions out of t
 }
 ```
 
+### Folder Structure
+Featured files only,
+```bash
+├── public
+│     ├── .htaccess # This solves the refreshing problem for routes (Described in a later section)
+│     └── index.html
+├── src
+│     ├── App.js # Acts as the router
+│     ├── components
+│     │     ├── common
+│     │     │     ├── index.js  # Indexes the sibling components so it will be able to import all in one line)
+│     │     │     ├── Modal.js
+│     │     │     └── ThemeToggle.js
+│     │     ├── pages
+│     │     │     ├── home
+│     │     │     │     └── Home.js
+│     │     │     ├── index.js
+│     │     │     ├── login
+│     │     │     │     ├── LoginForm.js
+│     │     │     │     └── Login.js
+│     │     │     └── NotFound.js # The 404 file
+│     │     └── template
+│     │     │     ├── Footer.js
+│     │     │     ├── Header.js
+│     │     │     └── index.js
+│     ├── contexts
+│     │     ├── index.js
+│     │     ├── SiteSettingsContext.js
+│     │     └── ThemeContext.js
+│     ├── index.css
+│     ├── index.js # The main index file where the #root resides
+│     └── use-cases
+│         ├── cache
+│         │     └── get-cached-fetch.js
+│         ├── create-markup.js
+│         ├── index.js
+│         ├── is-logged-in.js
+│         ├── iso-local-date.js
+│         ├── private-route.js
+│         ├── relative-day.js
+│         └── use-auth.js
+└── tailwind.config.js
+```
+
 ### Ready to use components
 
 The `app.js` is working solely as a router. Apart from a several commonly used components in the `Common` and `Pages` folders under `src`, there are some helpers provided to beat commonly rising issues with ReactJS.
