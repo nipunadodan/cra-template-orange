@@ -3,8 +3,18 @@
 This project was bootstrapped with [Create React App PWA](https://create-react-app.dev/docs/making-a-progressive-web-app/).
 
 ## Setup
-1. Download or Clone the repository.
-2. Run, `npx create-react-app my-app --template file:path/to/your/template/cra-template-orange`
+### Use npx to create the React App
+
+```shell
+npx create-react-app <project_name> --template cra-template-orange
+```
+
+### Use the template locally
+1. Download or Clone the [repository](https://github.com/nipunadodan/cra-template-orange).
+2. Run, 
+```shell
+npx create-react-app <project-name> --template file:path/to/your/template/cra-template-orange
+```
 
 ### Edit the template or adding packages
 1. [Template files](#folder-structure) can be found in `template` folder to add/edit/remove.
@@ -46,7 +56,7 @@ There are several readily available libraries, components and functions out of t
 }
 ```
 
-### Folder Structure
+### Template Folder Structure
 Featured files only,
 ```bash
 ├── public
@@ -78,15 +88,15 @@ Featured files only,
 │     ├── index.css
 │     ├── index.js # The main index file where the #root resides
 │     └── use-cases
-│         ├── cache
-│         │     └── get-cached-fetch.js
-│         ├── create-markup.js
-│         ├── index.js
-│         ├── is-logged-in.js
-│         ├── iso-local-date.js
-│         ├── private-route.js
-│         ├── relative-day.js
-│         └── use-auth.js
+│           ├── cache
+│           │     └── get-cached-fetch.js
+│           ├── create-markup.js
+│           ├── index.js
+│           ├── is-logged-in.js
+│           ├── iso-local-date.js
+│           ├── private-route.js
+│           ├── relative-day.js
+│           └── use-auth.js
 └── tailwind.config.js
 ```
 
@@ -101,7 +111,7 @@ The `app.js` is working solely as a router. Apart from a several commonly used c
 `ThemeContext` is included to function as the dark mode switcher. You can use `ThemeToggle` component to toggle the theme.
 
 ### Solving the refreshing problem with .htaccess
-To make sure the App will be routed correctly when refreshed, an .htaccess is introduced to redirect the requests to index.html. **This solution will only work with Apache servers**. For other solutions read [this (stackoverflow)](https://stackoverflow.com/questions/27928372/react-router-urls-dont-work-when-refreshing-or-writing-manually) or [this (React Docs)](https://create-react-app.dev/docs/deployment/#serving-apps-with-client-side-routing).
+To make sure the App will be routed correctly when refreshed, an .htaccess is introduced to redirect the requests to index.html. **This solution will only work with Apache servers**. For other solutions read, [this (stackoverflow)](https://stackoverflow.com/questions/27928372/react-router-urls-dont-work-when-refreshing-or-writing-manually) or [this (React Docs)](https://create-react-app.dev/docs/deployment/#serving-apps-with-client-side-routing).
 
 ```text
 RewriteBase /
