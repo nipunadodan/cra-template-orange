@@ -1,6 +1,37 @@
 {
   "name": "cra-template-orange",
   "version": "1.0.0",
-  "dependencies": {
-  }
+  "description": "Create React App Template with essential ready-code components and libraries.",
+  "main": "template.json",
+  "files": [
+    "template",
+    "template.json"
+  ],
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nipunadodan/cra-template-orange.git"
+  },
+  "keywords": [
+    "cra",
+    "create",
+    "react",
+    "app",
+    "template",
+    "react",
+    "reactjs",
+    "tailwind",
+    "react-router-dom",
+    "dotenv",
+    "sass"
+  ],
+  "author": "Nipuna Dodantenna",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nipunadodan/cra-template-orange/issues"
+  },
+  "homepage": "https://github.com/nipunadodan/cra-template-orange#readme"
 }
+
