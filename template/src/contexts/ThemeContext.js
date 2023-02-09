@@ -2,9 +2,9 @@ import React from 'react';
 
 const getInitialTheme = () => {
     if (typeof window !== 'undefined' && window.localStorage) {
-        const storedPrefs = window.localStorage.getItem('wallet-theme');
-        if (typeof storedPrefs === 'string') {
-            return storedPrefs;
+        const storedTheme = window.localStorage.getItem('wallet-theme');
+        if (typeof storedTheme === 'string') {
+            return storedTheme;
         }
 
         const userMedia = window.matchMedia('(prefers-color-scheme: dark)');
