@@ -8,6 +8,7 @@
     "template.json"
   ],
   "scripts": {
+    "build": "npx create-react-app ../orange-reactjs --template file:.",
     "test": "npm run test"
   },
   "repository": {

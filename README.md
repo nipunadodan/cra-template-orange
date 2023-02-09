@@ -1,6 +1,6 @@
 # React.js Boilerplate with Tailwind and React Router DOM
 
-This project was bootstrapped with [Create React App PWA](https://create-react-app.dev/docs/making-a-progressive-web-app/).
+This project is bootstrapped with [Create React App PWA](https://create-react-app.dev/docs/making-a-progressive-web-app/).
 
 ## Setup
 ### Use npx to create the React App
@@ -20,22 +20,10 @@ npx create-react-app <project-name> --template file:path/to/your/template/cra-te
 1. [Template files](#folder-structure) can be found in `template` folder to add/edit/remove.
 2. To add/edit/remove packages edit the `template.json` file.
 
-## Usage
-### Enabling PWA
-```javascript
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://cra.link/PWA
-serviceWorkerRegistration.unregister();
-```
-As the comment states, switching `serviceWorker.unregister()` to `serviceWorker.register()` will opt you in to using the service worker.
-
-You can totally remove Google Workbox libraries from the `package.json` if you don't desire this functionality.
-
 ## Available features
 There are several readily available libraries, components and functions out of the box. Default scripts are also changed as shown below. In addition, several ready-made components are available to use as is or to customise.
 
-### Added libraries on package.json
+### Added libraries through package.json
 
 ```json
 {
@@ -100,6 +88,18 @@ Featured files only,
 └── tailwind.config.js
 ```
 
+## Usage
+### Enabling PWA
+```javascript
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://cra.link/PWA
+serviceWorkerRegistration.unregister();
+```
+As the comment states, switching `serviceWorker.unregister()` to `serviceWorker.register()` will opt you in to using the service worker.
+
+You can totally remove Google Workbox libraries from the `package.json` if you don't desire this functionality.
+
 ### Ready to use components
 
 The `app.js` is working solely as a router. Apart from a several commonly used components in the `Common` and `Pages` folders under `src`, there are some helpers provided to beat commonly rising issues with ReactJS.
@@ -108,10 +108,10 @@ The `app.js` is working solely as a router. Apart from a several commonly used c
 `PrivateRoute.js` will provide a solution for authentication while routing. You will have to save authentication details somewhere convenient to you and retrieve them on `useAuth()` instead of retrieving from `localStorage` if you prefer. You can find it under `Helpers.js`.
 
 ### Dark Mode Switching
-`ThemeContext` is included to function as the dark mode switcher. You can use `ThemeToggle` component to toggle the theme.
+`ThemeContext` is included to function as the dark mode switcher. You can use `ThemeToggle` component to toggle the theme. **Remember** to add `ThemeProvider` to `App.js` and set `darkMode: 'class'` in `tailwind.config.js`
 
 ### Solving the refreshing problem with .htaccess
-To make sure the App will be routed correctly when refreshed, an .htaccess is introduced to redirect the requests to index.html. **This solution will only work with Apache servers**. For other solutions read, [this (stackoverflow)](https://stackoverflow.com/questions/27928372/react-router-urls-dont-work-when-refreshing-or-writing-manually) or [this (React Docs)](https://create-react-app.dev/docs/deployment/#serving-apps-with-client-side-routing).
+In order to make sure the App will be routed correctly when refreshed, an .htaccess is introduced to redirect the requests to index.html. **This solution will only work with Apache servers**. For other solutions read, [this (StackOverflow)](https://stackoverflow.com/questions/27928372/react-router-urls-dont-work-when-refreshing-or-writing-manually) or [this (React Docs)](https://create-react-app.dev/docs/deployment/#serving-apps-with-client-side-routing).
 
 ```text
 RewriteBase /
