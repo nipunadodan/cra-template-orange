@@ -32,19 +32,24 @@ const LoginForm = () => {
         event.preventDefault();
         let api_base = process.env.REACT_APP_API_BASE;
 
-        fetch(api_base + 'login', {
+        fetch('https://dummyjson.com/http/200', {
             method: 'post',
             body: JSON.stringify(inputs),
         })
             .then((res) => res.json())
             .then((result) => {
-                if (result.status === 'success') {
-                    localStorage.setItem('wallet_login', 'true');
-                    localStorage.setItem('wallet_user', JSON.stringify(result.user));
+                /*
+                 * NOTE:
+                 * Only an example. make the authentication stronger by using your own authentication.
+                 * */
+
+                if (result.message === 'OK') {
+                    localStorage.setItem('orange_login', 'true');
+                    localStorage.setItem('orange_user', JSON.stringify(result.user));
 
                     setLogin(true);
                 } else {
-                    localStorage.setItem('wallet_login', 'false');
+                    localStorage.setItem('orange_login', 'false');
                     setLogin(false);
                     setStatus({
                         type: 'danger',
@@ -64,7 +69,6 @@ const LoginForm = () => {
                     error: error,
                 });
             });
-        //event.preventDefault();
     };
 
     const openModal = (modal) => {
@@ -81,25 +85,15 @@ const LoginForm = () => {
     ) : (
         <>
             <Modal modal={modal} closeModal={closeModal} isOpen={isOpen}>
-                <>
-                    {status.error}
-                    {/*<div className="mt-12 flex justify-end">
-                        <button
-                            type="button"
-                            className="px-10 py-2 text-sm font-medium text-blue-900 bg-blue-100 border border-transparent rounded-md hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500 ml-auto"
-                            onClick={closeModal}
-                        >
-                            Okay
-                        </button>
-                    </div>*/}
-                </>
+                {status.error}
             </Modal>
-            <div className="wlogin-wrapper rounded-2xl px-8 md:px-16 pt-14 mt-6">
+
+            <div className="login-wrapper rounded-2xl px-8 md:px-16 pt-14 mt-6">
                 <h1
                     className={
                         'font-thin text-3xl text-center mb-6 flex items-end justify-center items-center'
                     }>
-                    <span className={'font-bold pr-2 mr-2 border-r border-gray-500 text-4xl'}>
+                    <span className={'font-bold pr-2 mr-2 border-gray-500 text-4xl'}>
                         login
                     </span>
                 </h1>
