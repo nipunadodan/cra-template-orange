@@ -1,43 +1,56 @@
-import React from 'react';
+import React, {useState, useEffect, createContext} from 'react';
 
-const getInitialPrivacy = () => {
+const getInitialSettings = () => {
     if (typeof window !== 'undefined' && window.localStorage) {
-        const storedPrefs = window.localStorage.getItem('wallet-privacy');
-        if (typeof storedPrefs === 'string') {
+        const storedSettings = window.localStorage.getItem('orange-settings');
+
+        if (typeof storedSettings !== 'undefined' && storedSettings !== null) {
             let settings;
             try {
-                settings = JSON.parse(storedPrefs);
+                settings = JSON.parse(storedSettings);
             } catch(e) {
-                console.warn('Settings loading error.');// error in the above string (in this case, yes)!
+                console.error('Settings loading error.'); // error in the above string (in this case, yes)!
             }
-            return true;
+            return settings;
         }else{
-            return false;
+            return {
+                settings: {
+                    setting_1: 90,
+                    setting_2: 10,
+                    setting_3: 30
+                }
+            };
         }
     }
 
-    return false // open privacy as the default;
+    return {
+        settings: {
+            setting_1: 90,
+            setting_2: 10,
+            setting_3: 30
+        }
+    }; // open settings as the default;
 };
 
-export const SiteSettingsContext = React.createContext();
+export const SiteSettingsContext = createContext();
 
-export const SiteSettingsProvider = ({ initialPrivacy, children }) => {
-    const [privacy, setPrivacy] = React.useState(getInitialPrivacy);
+export const SiteSettingsProvider = ({ initialSettings, children }) => {
+    const [settings, setSettings] = useState(getInitialSettings);
 
-    const rawSetPrivacy = (rawPrivacy) => {
-        localStorage.setItem('wallet-privacy', rawPrivacy);
+    const rawSetSettings = (rawSettings) => {
+        localStorage.setItem('orange-settings', JSON.stringify(rawSettings));
     };
 
-    if (initialPrivacy) {
-        rawSetPrivacy(initialPrivacy);
+    if (initialSettings) {
+        rawSetSettings(initialSettings);
     }
 
-    React.useEffect(() => {
-        rawSetPrivacy(privacy);
-    }, [privacy]);
+    useEffect(() => {
+        rawSetSettings(settings);
+    }, [settings]);
 
     return (
-        <SiteSettingsContext.Provider value={{ privacy: privacy, setPrivacy: setPrivacy }}>
+        <SiteSettingsContext.Provider value={{ settings, setSettings }}>
             {children}
         </SiteSettingsContext.Provider>
     );

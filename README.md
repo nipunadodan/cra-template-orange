@@ -1,19 +1,29 @@
 # React.js Boilerplate with Tailwind and React Router DOM
 
-This project is bootstrapped with [Create React App PWA](https://create-react-app.dev/docs/making-a-progressive-web-app/).
+This project is bootstrapped with [Create React App - PWA](https://create-react-app.dev/docs/making-a-progressive-web-app/) addressing common needs such as,
+- A routing library
+- An .env handler for handling environment
+- SASS and tailwind for styling
+- Dark mode enabled if needed
+- Pre-built commonly needed components
+- Auth-restricted pages/components
+- A well-formed file structure
+- Ability to turn it to a PWA
+
+and addressing common workarounds for well known issues like persistence over refreshes **to minimise the setup time almost to none.**
 
 ## Setup
 ### Use npx to create the React App
 
 ```shell
-npx create-react-app <project_name> --template cra-template-orange
+npx create-react-app <project-path> --template cra-template-orange
 ```
 
 ### Use the template locally
 1. Download or Clone the [repository](https://github.com/nipunadodan/cra-template-orange).
 2. Run, 
 ```shell
-npx create-react-app <project-name> --template file:path/to/your/template/cra-template-orange
+npx create-react-app <project-path> --template file:path/to/your/template/cra-template-orange
 ```
 
 ### Edit the template or adding packages

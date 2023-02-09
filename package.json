@@ -1,6 +1,6 @@
 {
   "name": "cra-template-orange",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "A Create React App Template with essential ready-to-code components and libraries.",
   "main": "template.json",
   "files": [
